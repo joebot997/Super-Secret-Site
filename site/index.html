@@ -1,37 +1,75 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <title>NGINX on Railway</title>
-    <meta name="description" content="Choo Choo!" />
-
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="/styles.css?v=1.0" />
+    <title>Super Secret Zone</title>
+    <style>
+      body {
+        font-family: 'Times New Roman', Times, serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        color:#ffffff
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      button {
+        background-color: #000000;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
   </head>
-
   <body>
-    <main>
-      <img
-        src="https://railway.app/brand/logo-light.svg"
-        alt="Railway logo"
-        class="logo"
-      />
+    <div class="container">
+      <h1>Welcome To The Zone</h1>
+      <p>Answer this question to proceed:</p>
+      <p>What Is the Password?</p>
+      <form>
+        <input type="password" id="answer" name="answer">
+        <button type="button" onclick="checkAnswer()">Up Up and Away!</button>
+      </form>
+      <p id="result"></p>
+    </div>
 
-      <h1>NGINX on Railway</h1>
+    <script>
+      function checkAnswer() {
+  var answer = document.getElementById("answer").value.toLowerCase();
+  if (answer === "thebestpassword") {
+    document.getElementById("result").innerHTML = "Correct!";
+    // Redirect to the next page
+    window.location.href = "https://super-secret-site.lunarvcoding.repl.co/";
+    return false; // prevent default form submission
+  } else {
+    document.getElementById("result").innerHTML = "Wrong. Try again.";
+    return false; // prevent default form submission
+  }
+}
+    </script>
 
-      <p>
-        Choo Choo! This is an example of an NGINX static site running on
-        Railway.
-        <a
-          href="https://github.com/railwayapp/starters/tree/master/examples/nginx"
-          >View source</a
-        >.
-      </p>
-    </main>
-
-    <script src="/script.js"></script>
-  </body>
+  <html>
+  <head>
+<style>
+  body {
+    background-image: url("BG.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .container {
+    height: 100vh; /* set container height to be 100% of viewport height */
+  }
+</style>
+  </head>
 </html>
